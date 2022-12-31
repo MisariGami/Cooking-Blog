@@ -1,0 +1,24 @@
+<section class="exploreCategories">
+    <div class="section-header">
+        <h2>Explore Latest</h2>
+    </div>
+    <div class="categories">
+
+        <% if(food !='' ) { %>
+            <% food.forEach(function(item,index) { %>
+                <div class="category-link">
+                    <a href="/foods/<%= item._id %>">
+                        <div class="category-image category-image-large">
+                            <img src="/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                        </div>
+                        <div class="title">
+                            <%= item.name %>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>No Items Found</p>
+                    <% } %>
+    </div>
+</section>

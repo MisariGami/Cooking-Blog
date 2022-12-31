@@ -1,0 +1,17 @@
+<div class="fooditem">
+    <div class="img">
+        <img src="/<%= food.image %>" style="top: 20px;" alt="<%= food.name %>" loading="lazy">
+    </div>
+    <div class="desc">
+        <h1><%= food.name %></h1>
+        <p style="margin-top: -1rem;"><i class="bi bi-tags-fill"></i><%= food.category %></p>
+        <h4>Description</h4>
+        <h6><%= food.description %></h6>
+        <h4>Ingredients</h4>
+        <h6><ul>
+            <% food.ingredients.forEach(function(ingredients, index){ %>
+              <li><%= ingredients %></li>
+            <% }) %>
+          </ul> </h6>
+    </div>
+</div>

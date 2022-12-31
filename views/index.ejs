@@ -1,0 +1,155 @@
+<div class="banner">
+    <div class="container">
+        <h1>Huge selection of delicios food dish</h1>
+        <p>Explore our huge selection of delicious recipe including; easy desserts, delicious vegan and vegetarian
+            dinner, gorgeous pasta, quick bakes, family-friendly meals and gluten-free recipes.</p>
+
+        <div class="button">
+            <a href="/explore-latest" class="scroll-link btn btn-white">Explore Latest</a>
+            <a href="/explore-random" class="scroll-link btn btn-white">Show Random</a>
+        </div>
+    </div>
+</div>
+
+
+<main>
+
+    <!-- Categories Start -->
+    <section>
+        <div class="categories">
+
+            <% if(categories !='' ) { %>
+                <% categories.forEach(function(category, index) { %>
+
+                    <a href="/categories/<%= category.name %>" class="category-link">
+                        <div class="category-image">
+                            <img src="/img/<%= category.image %>" alt="<%= category.name %>" loading="lazy">
+                        </div>
+                        <div class="title">
+                            <%= category.name %>
+                        </div>
+                    </a>
+                    <% }) %>
+                        <% } %>
+
+                            <a href="/categories" class="category-link">
+                                <div class="category-image view-all">
+                                    <img src="/img/igor-rand-vjIkHaMkT0o-unsplash.jpg" alt="View All Categories"
+                                        loading="lazy">
+                                </div>
+                                <div class="title">
+                                    View All
+                                </div>
+                            </a>
+        </div>
+    </section>
+
+    <!-- Latest Start -->
+    <section>
+        <div class="section-header">
+            <h2>Latest</h2>
+            <a href="/explore-latest">View More</a>
+        </div>
+
+        <div class="categories">
+
+            <% if(food !='' ) { %>
+                <% food.latest.forEach(function(item,index) { %>
+                    <div class="category-link">
+                        <a href="/foods/<%= item._id %>">
+                            <div class="category-image category-image-large">
+                                <img src="/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                            </div>
+                            <div class="title">
+                                <%= item.name %>
+                            </div>
+                        </a>
+                    </div>
+                    <% }) %>
+                        <% } %>
+        </div>
+    </section>
+
+    <!-- American Start -->
+    <section>
+        <div class="section-header">
+            <h2>American Food</h2>
+            <a href="/categories/American">View More</a>
+        </div>
+
+        <div class="categories">
+            <% if(typeof food.american !=='undefined' && food.american.length> 0 ) { %>
+                <% food.american.forEach(function(item,index) { %>
+                    <div class="category-link">
+                        <a href="/recipe/<%= item._id %>">
+                            <div class="category-image category-image-large">
+                                <img src="/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                            </div>
+                            <div class="title">
+                                <%= item.name %>
+                            </div>
+                        </a>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <p>No Items Found</p>
+                            <% } %>
+        </div>
+    </section>
+
+
+    <!-- Chinese -->
+    <section>
+        <div class="section-header">
+            <h2>Chinese Food</h2>
+            <a href="/categories/Chinese">View More</a>
+        </div>
+
+        <div class="categories">
+            <% if(typeof food.chinese !=='undefined' && food.chinese.length> 0 ) { %>
+                <% food.chinese.forEach(function(item,index) { %>
+                    <div class="category-link">
+                        <a href="/recipe/<%= item._id %>">
+                            <div class="category-image category-image-large">
+                                <img src="/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                            </div>
+                            <div class="title">
+                                <%= item.name %>
+                            </div>
+                        </a>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <p>No Items Found</p>
+                            <% } %>
+        </div>
+    </section>
+
+
+    <!-- Indian -->
+    <section>
+        <div class="section-header">
+            <h2>Indian Food</h2>
+            <a href="/categories/Indian">View More</a>
+        </div>
+
+        <div class="categories">
+            <% if(food !='' ) { %>
+                <% food.indian.forEach(function(item,index) { %>
+                    <div class="category-link">
+                        <a href="/foods/<%= item._id %>">
+                            <div class="category-image category-image-large">
+                                <img src="/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                            </div>
+                            <div class="title">
+                                <%= item.name %>
+                            </div>
+                        </a>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <p>No Items Found</p>
+                            <% } %>
+        </div>
+    </section>
+</main>

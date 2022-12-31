@@ -1,0 +1,46 @@
+<section class="submit-fooditem">
+    <h2>Submit Food Item</h2>
+    <form action="/submit-fooditem" class="submit-form" enctype="multipart/form-data" method="POST">
+        <!-- <div class="new_item"> -->
+            <% if(messages.error) { %>
+                <span style="color:red;font-size:small;"><%= messages.error %></span>
+            <% } %>
+        <div class="form-group">
+            <label for="name" class="text-light">Food Item Name</label>
+            <input type="text" name="name" value="<%= messages.name  %>">
+        </div>
+        <div class="form-group">
+            <label for="indredients" class="text-light">Ingredients</label>
+            <div class="ingredientList">
+                <div class="ingredeintDiv">
+                    <input type="text" name="ingredients" id="description" value="<%= messages.indredients  %>"></input>
+                </div>
+            </div>
+            <button type="button" class="btn" id="addIngredientsBtn">+ Ingredient</button>
+        </div>
+        <div class="form-group">
+            <label for="description" class="text-light">Recipe</label>
+            <textarea name="description" id="description" cols="30" rows="4" value="<%= messages.description  %>" ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Select Category</label>
+            <select class="form-select form-control" name="category" aria-label="Category">
+                <option selected>Select Category</option>
+                <!-- <option value="Thai">Thai</option> -->
+                <option value="American">American</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Indian">Indian</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="image" class="text-light">Image</label>
+            <input type="file" name="image">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submitbtn" id="submit-form-btn">Submit</button>
+        </div>
+
+        <!-- </div> -->
+    </form>
+</section>

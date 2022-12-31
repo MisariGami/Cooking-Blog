@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Icons only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font only -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>
+        <%= typeof title !='undefined' ? title: 'Cooking Blog - Made with Node.js' %>
+    </title>
+
+</head>
+
+<body>
+    <nav id="nav" class="fixed-nav">
+        <div class="nav-center">
+            <div class="nav-header">
+                <img width="80px" height="80px" src="/img/logo.png" class="logo">
+                <form method="POST" action="/search" class="search_mobile">
+                    <input type="search" name="searchTerm" placeholder="Search..." aria-label="Search">
+                </form>
+                <button class="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <form method="POST" action="/search" class="search">
+                <input type="search" name="searchTerm" placeholder="Search..." aria-label="Search">
+            </form>
+            <!-- <div class="links-container"> -->
+                <ul class="links">
+                    <li><a href="/" class="scroll-link">Home</a></li>
+                    <li><a href="/contact" class="scroll-link">Contact</a></li>
+    
+                    <li><a href="/submit-fooditem" class="scroll-link">Submit</a></li>
+                    <% if(user) { %>
+                        <li>
+                            <form id="logout" action="/logout" method="POST">
+                                <a class="scroll-link" onclick="document.getElementById('logout').submit()">logout</a>
+                            </form>
+                        </li>
+                        <% } else { %>
+                            <li><a href="/login" class="scroll-link">login</a></li>
+                            <% } %>
+                </ul>
+            <!-- </div> -->
+        </div>
+    </nav>
+    <%- body -%>
+
+        <footer class="section">
+            <p>copyright © 20CE029-Misari Gami <span id="date">2022</span>
+                all right reserved</p>
+        </footer>
+
+        </div>
+
+
+        <!-- JavaScript Bundle with Popper -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script> -->
+            
+        <!-- emali -->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="/js/script.js"></script>
+</body>
+
+</html>

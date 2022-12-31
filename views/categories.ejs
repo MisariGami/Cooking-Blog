@@ -1,0 +1,37 @@
+<section class="exploreCategories">
+    <div class="section-header">
+        <h2>Explore Categories</h2>
+    </div>
+    <div class="categories">
+        <% if(typeof categories !=='undefined' && categories.length> 0) { %>
+            <% categories.forEach(function(category, index) { %>
+
+                <a href="/categories/<%= category.name %>" class="category-link">
+                    <div class="category-image">
+                        <img src="/img/<%= category.image %>" alt="<%= category.name %>" loading="lazy">
+                    </div>
+                    <div class="title">
+                        <%= category.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+    </div>
+
+    <div class="categories">
+        <% if(typeof categoryById !=='undefined' && categoryById.length> 0) { %>
+            <% categoryById.forEach(function(item ,index) { %>
+                <div class="category-link">
+                    <a href="/foods/<%= item._id %>">
+                        <div class="category-image category-image-large">
+                            <img src="/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                        </div>
+                        <div class="title">
+                            <%= item.name %>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                    <% } %>
+    </div>
+</section>
